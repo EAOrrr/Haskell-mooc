@@ -41,6 +41,7 @@ treeSize (Node _ l r) = 1 + treeSize l + treeSize r
 treeMax :: Tree Int -> Int
 treeMax Empty = 0
 treeMax (Node val l r) = max val (max (treeMax l) (treeMax r))
+-- treeMax (Node v l r) = maximum [v, treeMax l, treeMax r]
 
 ------------------------------------------------------------------------------
 -- Ex 4: implement a function that checks if all tree values satisfy a
@@ -56,6 +57,8 @@ allValues condition Empty = True
 allValues condition (Node val l r)
   | condition val = allValues condition l && allValues condition r
   | otherwise = False
+-- allValues condition (Node val l r) =
+--   condition val && allValues condition l && allValues condition r
 
 ------------------------------------------------------------------------------
 -- Ex 5: implement map for trees.

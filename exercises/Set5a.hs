@@ -213,9 +213,12 @@ rgb Blue  = [0, 0, 1]
 rgb (Mix col1 col2) = mixup (rgb col1) (rgb col2)
   where mixup (x:xs) (y:ys) = (x+y)/2 : mixup xs ys
         mixup _ _ = []
+-- rgb (Mix c c') = zipWith avg (rgb c) (rgb c')
+--   where avg x y = (x+y)/2
 rgb (Invert col) = inv (rgb col) 
   where inv (x:xs) = (1-x): inv xs
         inv [] = []
+-- rgb (Invert c) = map (1-) $ rgb c
 
 ------------------------------------------------------------------------------
 -- Ex 9: define a parameterized datatype OneOrTwo that contains one or
