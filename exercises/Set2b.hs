@@ -124,7 +124,7 @@ countdown' n soFar = countdown' (n-1) (soFar ++ show n ++ "... ")
 smallestDivisor :: Integer -> Integer
 smallestDivisor n = smallestDivisor' n 2
 smallestDivisor' n k 
-    | n==k = n
+    -- | n==k = n
     | (mod n k) == 0 = k
     | otherwise = smallestDivisor' n (k+1)
 
