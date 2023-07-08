@@ -226,11 +226,11 @@ class Addable a where
 
 instance Addable Integer where
   zero = 0
-  add x y = x + y
+  add = (+)
 
 instance Addable [a] where
   zero = []
-  add x y = x ++ y
+  add = (++)
 ------------------------------------------------------------------------------
 -- Ex 12: cycling. Implement a type class Cycle that contains a
 -- function `step` that cycles through the values of the type.
